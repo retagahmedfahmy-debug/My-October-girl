@@ -124,10 +124,11 @@
       <h2 class="arabic" style="font-size:1.5rem">أغنية صغيرة لفتاة أكتوبر</h2>
       <p class="music-note arabic">اختياري: أضيفي ملفًا باسم <b>song.mp3</b> بجانب ملف index.html، وسيظهر مشغّل الأغنية هنا.</p>
       <div id="musicPlayer" class="hidden">
-        <audio controls preload="none">
+        <audio id="birthdayMusic" controls autoplay loop preload="auto">
           <source src="song.mp3" type="audio/mpeg">
           متصفحك لا يدعم تشغيل الصوت.
         </audio>
+        <p class="music-note arabic">إذا لم تبدأ الأغنية تلقائيًا، اضغطي زر التشغيل 🎵 (بعض المتصفحات تمنع تشغيل الصوت تلقائيًا).</p>
       </div>
     </section>
   </main>
@@ -161,9 +162,18 @@
         }, i * 70);
       }
     }
-    // Show the optional music player only if the optional song file is added.
+    // Show the music player if song.mp3 exists, and try autoplay.
     fetch('song.mp3', { method: 'HEAD' }).then(response => {
-      if (response.ok) document.getElementById('musicPlayer').classList.remove('hidden');
+      if (response.ok) {
+        document.getElementById('musicPlayer').classList.remove('hidden');
+        const music = document.getElementById('birthdayMusic');
+        const tryPlay = music.play();
+        if (tryPlay && typeof tryPlay.catch === 'function') {
+          tryPlay.catch(() => {
+            // Browsers may block autoplay with sound until the visitor interacts.
+          });
+        }
+      }
     }).catch(() => {});
   </script>
 </body>
