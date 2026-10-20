@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f7eee5">
+  <title>My October Girl 🍂</title>
+  <style>
+    :root {
+      --cream: #fbf5ee;
+      --beige: #ead8c7;
+      --brown: #684b3d;
+      --deep: #493126;
+      --pink: #e8b9bd;
+      --rose: #b86f78;
+      --gold: #c79b60;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0; min-height: 100vh; overflow-x: hidden;
+      background:
+        radial-gradient(circle at 12% 15%, #f0d9d2 0, transparent 22rem),
+        radial-gradient(circle at 90% 60%, #e9d7bd 0, transparent 25rem),
+        var(--cream);
+      color: var(--deep);
+      font-family: "Palatino Linotype", "Book Antiqua", Georgia, serif;
+    }
+    .arabic { font-family: Tahoma, Arial, sans-serif; line-height: 2.05; }
+    .wrap { width: min(920px, 92%); margin: auto; }
+    .hero { min-height: 92vh; display: grid; place-items: center; text-align: center; padding: 4rem 1rem 3rem; position: relative; }
+    .eyebrow { color: var(--rose); letter-spacing: .18em; font-size: .82rem; text-transform: uppercase; }
+    h1 { font-size: clamp(2.5rem, 9vw, 5.5rem); line-height: 1.05; margin: 1rem 0; color: var(--brown); font-weight: 500; }
+    .subtitle { max-width: 580px; margin: 1rem auto 2rem; font-size: 1.08rem; color: #795e4f; }
+    .leaf { font-size: 2rem; display: inline-block; animation: sway 3s ease-in-out infinite; }
+    .btn {
+      border: 0; border-radius: 999px; padding: .95rem 1.5rem; cursor: pointer;
+      background: var(--brown); color: #fff8f1; font-size: 1rem; font-family: inherit;
+      box-shadow: 0 8px 24px #684b3d24; transition: transform .2s, background .2s;
+    }
+    .btn:hover { transform: translateY(-2px); background: var(--deep); }
+    .secondary { background: #e9c7c5; color: #543b32; margin-inline-start: .5rem; }
+    .card {
+      background: #fffaf5d9; border: 1px solid #e8d7c7; border-radius: 28px;
+      padding: clamp(1.25rem, 4vw, 3rem); margin: 1.5rem auto 3rem;
+      box-shadow: 0 18px 60px #684b3d0e;
+    }
+    h2 { font-size: clamp(1.7rem, 5vw, 2.5rem); font-weight: 500; color: var(--brown); text-align: center; margin-top: 0; }
+    .divider { text-align: center; color: var(--gold); letter-spacing: .6rem; margin: 1.5rem 0; }
+    .letter { font-size: 1.04rem; white-space: normal; }
+    .letter p { margin: 0 0 1.2rem; }
+    .hidden { display: none; }
+    .surprise {
+      text-align: center; background: #f8e9e6; border-radius: 22px; padding: 1.5rem;
+      margin-top: 1.5rem; animation: appear .6s ease both;
+    }
+    .surprise p { font-size: 1.15rem; }
+    .music { text-align: center; margin: 1.5rem auto 2.5rem; padding: 1.25rem; }
+    audio { width: min(420px, 100%); margin-top: .75rem; }
+    .music-note { color: #8b6c5a; font-size: .9rem; }
+    footer { text-align: center; padding: 1.5rem 1rem 3rem; color: #977969; font-size: .9rem; }
+    .floating { position: fixed; pointer-events: none; z-index: 10; animation: floatUp 3.6s ease-out forwards; font-size: 1.4rem; }
+    .sparkle { position: fixed; pointer-events: none; z-index: 10; animation: sparkle 1.1s ease-out forwards; }
+    @keyframes sway { 0%,100% { transform: rotate(-8deg) } 50% { transform: rotate(8deg) } }
+    @keyframes appear { from { opacity: 0; transform: translateY(12px) } to { opacity: 1; transform: translateY(0) } }
+    @keyframes floatUp { 0% { opacity: 0; transform: translateY(10px) scale(.6) rotate(0) } 15% { opacity: 1 } 100% { opacity: 0; transform: translateY(-85vh) scale(1.35) rotate(25deg) } }
+    @keyframes sparkle { 0% { opacity: 0; transform: scale(.3) } 30% { opacity: 1 } 100% { opacity: 0; transform: scale(1.5) translateY(-18px) } }
+    @media (max-width: 540px) {
+      .hero { min-height: 84vh; padding-top: 3rem; }
+      .subtitle { font-size: 1rem; }
+      .btn { padding: .85rem 1.15rem; }
+      .letter { font-size: .98rem; }
+      .secondary { margin: .65rem 0 0; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <section class="hero wrap">
+      <div>
+        <div class="leaf" aria-hidden="true">🍂</div>
+        <div class="eyebrow">a little autumn gift · just for you</div>
+        <h1>My October<br>Girl <span aria-hidden="true">♡</span></h1>
+        <p class="subtitle arabic">إلى فتاةٍ وُلدت في أكتوبر، ثم أصبحت من أجمل أقداري.</p>
+        <button class="btn" id="openLetter">افتحي رسالتكِ يا حلوة أكتوبر 🤎</button>
+        <div style="margin-top:1.5rem;color:#a88670">✧ &nbsp; ♡ &nbsp; ✧</div>
+      </div>
+    </section>
+
+    <section class="wrap card hidden" id="letterCard">
+      <h2 class="arabic">إلى فتاة أكتوبر الجميلة 🍁</h2>
+      <div class="divider">✧ ♡ ✧</div>
+      <article class="letter arabic">
+        <p>في يومٍ من أيام أكتوبر، حين كانت أوراق الخريف تتساقط بهدوء، وحين كانت السماء ترتدي ألوانها الذهبية الدافئة، وُلدت فتاةٌ لم تكن تعلم أن يومًا ما، ستصبح شخصًا مميزًا في حياة أحدهم، وأن وجودها سيعني الكثير لقلبٍ لم يكن يعرف بعد أنه سيلتقي بها. وكأن أكتوبر، بكل ما يحمله من جمال وهدوء، قرر أن يُهدي العالم شيئًا من أجمل هداياه، فكانت هي. 🍂🤎</p>
+        <p>وها قد عاد أكتوبر من جديد، وعاد معه اليوم الذي وُلدت فيه واحدة من أجمل الأشخاص الذين عرفتهم في حياتي. اليوم الذي لا أريد أن يمر كأنه مجرد يوم عادي، لأنّه اليوم الذي جاءت فيه إلى هذا العالم فتاةٌ أصبحت تعني لي الكثير، فتاةٌ أحمد الله أنني عرفتها، وأن الأيام جمعتني بها، وأنني أستطيع اليوم أن أقول بكل صدق إن وجودها من الأشياء الجميلة التي حدثت لي.</p>
+        <p>هابي بيرثدايي لأجمل فتاة في أكتوبررررر، لصديقتي وحبيبتي وقطعة قلبي، للإنسانة اللي مهما حكيت عنها ومهما كتبت لها، رح أحس إن كلامي قليل عليها، وإن كل الحروف اللي بالعالم ما رح تكفي توصف مكانتها عندي. كل عام وأنتِ بخير يا أجمل أقداري، وكل عام وأنتِ بخير يا شخص أتمنى له من قلبي كل الأشياء الحلوة اللي ممكن تصير في هالدنيا.</p>
+        <p>تعرفين؟ أحيانًا أفكر كيف ممكن شخص يدخل حياتنا، وبمرور الوقت يصير جزءًا من أيامنا وتفاصيلنا، ويصير وجوده شيء نعتاده ونحبه، لدرجة أننا ما نقدر نتخيل بعض اللحظات من دونه. وهنا أتذكر أن لنا سنتين مع بعض، سنتين مرّت بكل تفاصيلها، بضحكاتها وأحاديثها ومواقفها، ويمكن مرّت بسرعة، لكنّها تركت بقلبي أشياء كثيرة ما تنقاس بالوقت أبدًا. سنتين عرفت فيهم إن الصداقة مو بس إنك تلاقين شخصًا تتكلمين معه، بل إنك تلاقين شخصًا تفرحين لوجوده، وتحبين تشاركينه تفاصيلك، وتكونين على طبيعتك معه من غير ما تفكرين كثيرًا بكلامك أو تخافين من إنك تكونين نفسك.</p>
+        <p>وأنتِ بالنسبة لي مو مجرد صديقة عرفتها من سنتين وخلاص، أنتِ الإنسانة اللي فيها من الحنية ما يطمن القلب، ومن الضحك ما يغيّر المزاج، ومن الجنون ما يخلي أبسط الأشياء ذكرى حلوة، ومن اللطف ما يخلّي وجودها مختلفًا عن أي شخص ثاني. أنتِ من الناس اللي عندهم قدرة غريبة على إنهم يخلّون اللحظات العادية مميزة، وإنهم يزرعون البهجة في قلوب غيرهم من غير ما ينتبهون حتى. ويمكن ما تعرفين هالشيء، بس أحيانًا الشخص ما يحتاج يسوي شيئًا كبيرًا عشان يكون غاليًا، يكفي أنه يكون هو، وأنتِ لحالك كفاية لتكوني شخصًا غاليًا جدًا عندي. 😭🤎</p>
+        <p>وبعيد ميلادك، أبي أقول لك شيئًا أتمنى إنك تتذكرينه دائمًا: أنتِ تستحقين الحب، تستحقين الفرح، تستحقين أن تُعاملي بلطف، وأن تجدي أشخاصًا يقدّرون قلبك ويحافظون على مشاعرك، وأن تكوني محاطة بأشخاص يشوفون فيكِ الأشياء الحلوة اللي يمكن أنتِ بنفسك تنسينها أحيانًا. أتمنى ما يجي يوم تحسين فيه إنك أقل من أي شيء جميل، أو إنك مو كفاية، لأنك والله أكثر من كفاية، وأجمل بكثير مما يمكن للكلام أن يشرح.</p>
+        <p>أتمنى لكِ سنة جديدة من عمرك تكون أخف على قلبك من كل السنوات اللي راحت، سنة مليانة ضحك من القلب، وأخبار حلوة تجيك فجأة، وأمنيات تتحقق وحدة وراء الثانية، وأيام تنامين في نهايتها وأنتِ راضية ومبسوطة، مو شايلة همّ بكرة ولا زعلانة على أمس. أتمنى ربي يعوّضك عن كل لحظة ضاقت فيها نفسك، وعن كل مرة ابتسمتِ فيها وأنتِ من داخلك مو بخير، وعن كل أمنية تمنّيتيها بصمت. أتمنى أن الحياة تفاجئك بأشياء أجمل بكثير من اللي خططتِ لها، وأن يجي يوم تقولين فيه إن كل الانتظار كان يستحق، وإن الأشياء الحلوة فعلًا وصلت لكِ في الوقت المناسب. 🥹🎀</p>
+        <p>وإذا جاء يوم وحسّيتي فيه إن الدنيا صعبة، أو إنك تعبتِ من كل شيء، أتمنى تتذكرين إنك مو مضطرة تكونين قوية طول الوقت، وإن من حقك تتعبين وتزعلين وتحتاجين أحد يسمعك. أتمنى دائمًا تلاقين حولك أشخاصًا يخلّونك تحسين بالأمان، أشخاصًا يسمعونك من غير ما يحكمون عليكِ، ويوقفون معكِ من غير ما يخلّونك تحسين إنك عبء عليهم. وأتمنى أكون أنا من الأشخاص اللي تقدرين تكونين معهم على طبيعتك، اللي تضحكين معهم على أتفه الأشياء، وتحكين لهم عن الأشياء اللي ببالك، وتعرفين إنك مو مضطرة تشرحين نفسك ألف مرة عشان تنفهمين.</p>
+        <p>وأبيك تعرفين إني ممتنة للسنتين اللي جمعتني فيكِ، وممتنة لكل لحظة حلوة عشناها، ولكل ضحكة، ولكل حديث، ولكل ذكرى صارت جزءًا من قصتنا. يمكن ما أقدر أرجع بالوقت وأعيش كل لحظة من جديد، لكن أقدر أتمنى من كل قلبي إن الأيام الجاية تعطينا ذكريات أحلى وأكثر، وإننا بعد سنوات نرجع نتذكر هالفترة ونضحك على سوالفنا ومواقفنا، ونستوعب كيف كبرنا وتغيّرنا، لكننا لسه نحتفظ بمكان لبعض في حياتنا.</p>
+        <p>وأتمنى مهما كبرتِ، ومهما تغيّرت تفاصيل حياتك، ومهما أخذتنا الأيام إلى أماكن مختلفة، تظلين تعرفين إنك شخص له مكانة خاصة عندي، وإن صداقتنا مو شيء أعتبره عاديًا أو أنساه بسهولة. ما أقدر أوعدك إن الأيام كلها بتكون مثالية، لكن أقدر أتمنى إن صداقتنا تظل مليانة صدق وحنية وضحك، وإننا نعرف دائمًا كيف نرجع لبعض حتى بعد الأيام المزدحمة والانشغالات.</p>
+        <p>يا فتاة أكتوبر، يا أجمل من أنصفه الخريف حين اختارك لتكوني من مواليده، أتمنى أن يكون عامك الجديد بداية لكل شيء كنتِ تتمنينه. أتمنى أن تنالي من الحب أكثر مما أعطيتِ، ومن الفرح أكثر مما تمنّيتِ، ومن الطمأنينة ما يجعل قلبك يرتاح أخيرًا. أتمنى أن تظل عيناكِ تلمعان من السعادة، وأن تبقى ضحكتك من الأشياء اللي ما تفقد جمالها مع الوقت، وأن تجدي في كل سنة تمر عليكِ أسبابًا أكثر لتكوني فخورة بنفسك وبالإنسانة اللي صرتِ عليها.</p>
+        <p>وأخيرًا، لو كان بإمكاني أن أهديكِ شيئًا في يوم ميلادك، لما اخترت لكِ هدية تنتهي فرحتها بعد أيام، بل كنت سأهديكِ عامًا كاملًا من السعادة، وقلبًا مطمئنًا لا تثقله الهموم، وأيامًا لا تضطرين فيها لإخفاء حزنك، وأمنيات تتحقق قبل أن تفقدي الأمل بها. كنت سأهديكِ كل الأشياء الجميلة التي تستحقينها، وكل اللحظات التي أتمنى أن تعيشيها، وكل الحب الذي أتمنى أن تشعري به في كل يوم من أيام حياتك.</p>
+        <p>شكرًا لأنك أنتِ، شكرًا لأن الحياة عرّفتني عليكِ، وشكرًا لأن لي في هذا العالم صديقة مثلك أستطيع أن أحتفل بيوم ميلادها وأتمنى لها كل هذا الخير من أعماق قلبي. ولو عاد بي الزمن إلى أول يوم عرفتكِ فيه، أتمنى أن تجمعنا الأيام من جديد، وأن أحظى بفرصة معرفتكِ مرة أخرى، لأن بعض الأشخاص يستحقون أن نلتقي بهم أكثر من مرة، وأنتِ واحدة منهم.</p>
+        <p>كل عام وأنتِ بخير يا حلوة أكتوبر، يا صديقتي اللي أتمنى لها عمرًا طويلًا مليئًا بالأشياء اللي تحبها، يا رب تكون سنتك الجديدة أجمل من كل اللي تتخيلينه، وتكون أيامك القادمة مليانة حب وضحك ونجاح وراحة بال. وكل عام وأنتِ تكبرين سنة في عمرك، وسنوات في أحلامك، وأضعافها في سعادة قلبك.</p>
+        <p>وفي مثل هذا اليوم، وُلدت فتاةٌ جميلة، وبعد سنوات التقيتُ بها، ولم أكن أعلم حينها أنني سأكتب لها يومًا كل هذه الكلمات، لكنني اليوم أعرف شيئًا واحدًا: أنني سعيدة لأن طرقنا تقاطعت، وأنني أتمنى أن تبقى قصتنا من القصص الجميلة التي لا ينهيها مرور الزمن.</p>
+        <p><strong>عيد ميلاد سعيد يا أجمل هدايا أكتوبر، أحبكِ كثيرًا، وأكثر مما تستطيع هذه الرسالة أن تقول. 🍂🤎🎂🫂</strong></p>
+      </article>
+      <div class="divider">♡ &nbsp; 🍂 &nbsp; ♡</div>
+      <div style="text-align:center">
+        <button class="btn" id="surpriseButton">اضغطي هنا للمفاجأة 🎁</button>
+        <div id="surprise" class="surprise hidden arabic">
+          <div style="font-size:2.4rem">🎂 💗 🍂</div>
+          <p><strong>أمنيتي لكِ:</strong><br>أن تكون أيامكِ القادمة ألطف من الخريف، وأدفأ من كل رسالة حب، ومليئة بأشياء تجعلك تبتسمين من قلبكِ.</p>
+          <p>لو كان بإمكاني، لجعلت كل يوم من أيامكِ عيدًا صغيرًا. كل عام وأنتِ بخير يا My October Girl ♡</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="wrap music">
+      <div class="divider">♪ ♡ ♪</div>
+      <h2 class="arabic" style="font-size:1.5rem">أغنية صغيرة لفتاة أكتوبر</h2>
+      <p class="music-note arabic">اختياري: أضيفي ملفًا باسم <b>song.mp3</b> بجانب ملف index.html، وسيظهر مشغّل الأغنية هنا.</p>
+      <div id="musicPlayer" class="hidden">
+        <audio controls preload="none">
+          <source src="song.mp3" type="audio/mpeg">
+          متصفحك لا يدعم تشغيل الصوت.
+        </audio>
+      </div>
+    </section>
+  </main>
+  <footer class="arabic">صُنعت بحب، من أجل فتاة وُلدت في أكتوبر 🍂🤎</footer>
+
+  <script>
+    const letter = document.getElementById('letterCard');
+    document.getElementById('openLetter').addEventListener('click', () => {
+      letter.classList.remove('hidden');
+      letter.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      hearts(18);
+    });
+    document.getElementById('surpriseButton').addEventListener('click', () => {
+      const surprise = document.getElementById('surprise');
+      surprise.classList.toggle('hidden');
+      if (!surprise.classList.contains('hidden')) hearts(32);
+    });
+    function hearts(count) {
+      const symbols = ['♡', '♥', '✧', '✨', '🍂', '💗'];
+      for (let i = 0; i < count; i++) {
+        setTimeout(() => {
+          const el = document.createElement('span');
+          el.className = 'floating';
+          el.textContent = symbols[Math.floor(Math.random() * symbols.length)];
+          el.style.left = (5 + Math.random() * 90) + 'vw';
+          el.style.bottom = '-2rem';
+          el.style.color = ['#b86f78', '#c79b60', '#9d7863', '#d99ca8'][Math.floor(Math.random() * 4)];
+          el.style.fontSize = (1 + Math.random() * 1.5) + 'rem';
+          document.body.appendChild(el);
+          setTimeout(() => el.remove(), 3800);
+        }, i * 70);
+      }
+    }
+    // Show the optional music player only if the optional song file is added.
+    fetch('song.mp3', { method: 'HEAD' }).then(response => {
+      if (response.ok) document.getElementById('musicPlayer').classList.remove('hidden');
+    }).catch(() => {});
+  </script>
+</body>
+</html>
